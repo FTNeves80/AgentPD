@@ -8,7 +8,7 @@ api_key = os.getenv("OPENAI_API_KEY")
 
 
 st.set_page_config(layout="wide")
-st.title("Bem vindo a agencia de Viagem Tabajara")
+st.title("Bem vindo a agência de Viagem Tabajara")
 st.write("Essa aplicação irá planejar sua viagem e dar dicas valiosas")
 
 
@@ -23,7 +23,7 @@ with col1:
     box = st.container(height=300)
     with box:
         container = st.empty()
-        container.header("Sugestão de veiagem")
+        container.header("Sugestão de viagem")
 
 if button:
     if request:
