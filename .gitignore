@@ -1,0 +1,29 @@
+# Ignora o arquivo com variáveis sensíveis
+.env
+
+# Ignora o cache do Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignora o ambiente virtual chamado "env"
+env/
+ENV/
+venv/
+.venv/
+
+# Ignora arquivos do Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignora arquivos temporários de IDEs/editors
+.vscode/
+*.code-workspace
+
+# Ignora arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Ignora logs e arquivos temporários
+*.log
+*.tmp
+*.bak
