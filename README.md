@@ -35,6 +35,31 @@ agencia_viagem/
 
 
 
+## Instruções para execução local
+Clone o repositório:
+
+git clone <INSIRA AQUI O LINK DO SEU REPOSITÓRIO>
+cd agencia_viagem
+Crie um ambiente Conda ou virtualenv (exemplo com Conda):
+
+conda create -n agente_viagem python=3.11
+conda activate agente_viagem
+Instale as dependências:
+
+pip install -r requirements.txt
+Crie o arquivo .env com sua chave da OpenAI:
+
+OPENAI_API_KEY=sk-xxxxxxx
+
+Execute o aplicativo:
+streamlit run app.py
+
+
+Acesse o navegador:
+O Streamlit abrirá automaticamente, ou você pode acessar manualmente:
+http://localhost:8501
+
+
 
 ### conda info --envs
 
