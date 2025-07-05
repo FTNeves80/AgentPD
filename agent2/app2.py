@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 from dotenv import load_dotenv
-from agent import Agent
+from agent2 import Agent2
 
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
@@ -12,7 +12,7 @@ st.title("Bem vindo a agência de Viagem Tabajara")
 st.write("Essa aplicação irá planejar sua viagem e dar dicas valiosas")
 
 
-agent = Agent(api_key)
+agent = Agent2(api_key)
 
 col1, col2 = st.columns(2)
 
@@ -28,6 +28,13 @@ with col1:
 if button:
     if request:
         response = agent.get_tips(request)
-        container.write(response)
+        container.write(response["itinerary"])
+
+        st.write("Coordenadas:")
+        st.write(response["coordinates"])   
+    else:
+        st.error("Por favor, insira um destino válido para a viagem.")
+
+
 with col2:
     col2.write("Dicas de viagem")
