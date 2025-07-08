@@ -37,10 +37,7 @@ class TravelTemplate:
 
         self.system_message_prompt = SystemMessagePromptTemplate.from_template(self.system_template)
         self.human_message_prompt = HumanMessagePromptTemplate.from_template(self.human_template)
-        self.chat_prompt = ChatPromptTemplate.from_messages([
-            self.system_message_prompt,
-            self.human_message_prompt
-        ])
+        self.chat_prompt = ChatPromptTemplate.from_messages([self.system_message_prompt,self.human_message_prompt])
 
 class MeppingTemplate:
     def __init__(self):
@@ -68,82 +65,30 @@ class MeppingTemplate:
                 - Enjoy a walk in Hyde Park (Hyde Park, London W2 2UH)
                 - End the trip at Harrods (87-135 Brompton Rd, Knightsbridge, London SW1X 7XL)
             ####
-            Output:
-            {{
-                "days": [
-                    {{
-                        "day": 1,
-                        "locations": [
-                            {{
-                                "name": "Buckingham Palace",
-                                "address": "The Mall, London SW1A 1AA",
-                                "latitude": 51.5014,
-                                "longitude": -0.1419
-                            }},
-                            {{
-                                "name": "Tower of London",
-                                "address": "Tower Hill, London EC3N 4AB",
-                                "latitude": 51.5081,
-                                "longitude": -0.0759
-                            }},
-                            {{
-                                "name": "British Museum",
-                                "address": "Great Russell St, Bloomsbury, London WC1B 3DG",
-                                "latitude": 51.5194,
-                                "longitude": -0.1270
-                            }},
-                            {{
-                                "name": "Oxford Street",
-                                "address": "Oxford St, London W1C 1JN",
-                                "latitude": 51.5145,
-                                "longitude": -0.1419
-                            }},
-                            {{
-                                "name": "Covent Garden",
-                                "address": "Covent Garden, London WC2E 8RF",
-                                "latitude": 51.5115,
-                                "longitude": -0.1236
-                            }}
-                        ]
-                    }},
-                    {{
-                        "day": 2,
-                        "locations": [
-                            {{
-                                "name": "London Eye",
-                                "address": "Lambeth, London SE1 7PB",
-                                "latitude": 51.5033,
-                                "longitude": -0.1195
-                            }},
-                            {{
-                                "name": "Natural History Museum",
-                                "address": "Cromwell Rd, South Kensington, London SW7 5BD",
-                                "latitude": 51.4967,
-                                "longitude": -0.1764
-                            }},
-                            {{
-                                "name": "Victoria and Albert Museum",
-                                "address": "Cromwell Rd, Knightsbridge, London SW7 2RL",
-                                "latitude": 51.4964,
-                                "longitude": -0.1722
-                            }},
-                            {{
-                                "name": "Hyde Park",
-                                "address": "Hyde Park, London W2 2UH",
-                                "latitude": 51.5074,
-                                "longitude": -0.1657
-                            }},
-                            {{
-                                "name": "Harrods",
-                                "address": "87-135 Brompton Rd, Knightsbridge, London SW1X 7XL",
-                                "latitude": 51.4995,
-                                "longitude": -0.1634
-                            }}
-                        ]
-                    }}
-                ]
-            }}
-            """
+        Output:
+        {{
+            "days": [
+                {{
+                "day": 1,
+                "locations": [
+                        {{"lat": 51.5014, "lon": -0.1419, "address": "The Mall, London SW1A 1AA", "name": "Buckingham Palace"}},
+                        {{"lat": 51.5081, "lon": -0.0759, "address": "Tower Hill, London EC3N 4AB", "name": "Tower of London"}},
+                        {{"lat": 51.5194, "lon": -0.1270, "address": "Great Russell St, Bloomsbury, London WC1B 3DG", "name": "British Museum"}},
+                        {{"lat": 51.5145, "lon": -0.1444, "address": "Oxford St, London W1C 1JN", "name": "Oxford Street"}},
+                        {{"lat": 51.5113, "lon": -0.1223, "address": "Covent Garden, London WC2E 8RF", "name": "Covent Garden"}},
+                    ]
+                }}, {{
+                    "day": 2,
+                    "locations": [
+                        {{"lat": 51.4994, "lon": -0.1272, "address": "20 Deans Yd, Westminster, London SW1P 3PA", "name": "Westminster Abbey"}},
+                        {{"lat": 51.5022, "lon": -0.1299, "address": "Clive Steps, King Charles St, London SW1A 2AQ", "name": "Churchill War Rooms"}},
+                        {{"lat": 51.4966, "lon": -0.1764, "address": "Cromwell Rd, Kensington, London SW7 5BD", "name": "Natural History Museum"}},
+                        {{"lat": 51.5055, "lon": -0.0754, "address": "Tower Bridge Rd, London SE1 2UP", "name": "Tower Bridge"}}
+                    ]
+                }}
+            ]
+        }}        
+        """
         self.human_template = """
         #### {itinerary}
         """
