@@ -4,18 +4,35 @@ name_of_unit = "seconds"
 
 ##############################################
 
+# Function to convert days to seconds
 def days_to_units(num_of_days):
+    condition = num_of_days > 0
+    print(condition)
+    print(type(condition))
     return f"{num_of_days} days are {num_of_days * calculation_to_seconds} {name_of_unit}"
 
-my_var = input("Enter the number of days:\n")
+# Function to check if the input is valid and perform the calculation    
+def check_input(input_value):
+    if user_input.isdigit():
+        user_input_number = int(input_value)
+        if user_input_number > 0:
+            calculated_value = days_to_units(user_input_number)
+            print(calculated_value)
+        elif user_input_number == 0:
+            print("You entered 0 days, which is not a valid input for this calculation.")
+    else:
+        print("You entered an invalid value. Please enter a positive integer.")
 
-text = days_to_units(int(my_var))
+#User input
+user_input = input("Enter the number of days:\n")
+check_input(user_input)
 
-print(text)
+
+
 
 ##############################################
-"""
 print("*"*100)
+"""
 
 user_input_1 = input("Enter the number 1:\n")
 user_input_2 = input("Enter the number 2:\n")
