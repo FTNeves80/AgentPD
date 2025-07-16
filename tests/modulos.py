@@ -20,3 +20,6 @@ def check_input(days_and_unit_dictionary):
             print("You entered a negative number, which is not valid for this calculation.")
     except ValueError:
         print("You entered an invalid value. Please enter a positive integer.")
+
+
+user_input_message = "Enter the number of days:\n"
