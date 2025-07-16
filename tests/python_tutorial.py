@@ -6,9 +6,9 @@ name_of_unit = "seconds"
 
 # Function to convert days to seconds
 def days_to_units(num_of_days):
-    condition = num_of_days > 0
-    print(condition)
-    print(type(condition))
+    #condition = num_of_days > 0
+    #print(condition)
+    #print(type(condition))
     return f"{num_of_days} days are {num_of_days * calculation_to_seconds} {name_of_unit}"
 
 # Function to check if the input is valid and perform the calculation    
@@ -31,15 +31,10 @@ def check_input(input_value):
 
 #User input
 user_input = ""
-a = 0
 while user_input != "exit":
     user_input = input("Enter the number of days:\n")
-    check_input(user_input)
-    a += 1
-    print(f"You have entered a value {a} times.")
-
-
-
+    for num_of_days_element in user_input.split(","):
+        check_input(num_of_days_element)
 
 
 ##############################################
